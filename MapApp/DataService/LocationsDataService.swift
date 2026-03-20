@@ -10,8 +10,8 @@ import MapKit
 
 class LocationsDataService {
     
-    static let locations: [Location] = [
-        Location(
+    static let locations: [LocationModel] = [
+        LocationModel(
             name: "Colosseum",
             cityName: "Rome",
             coordinates: CLLocationCoordinate2D(latitude: 41.8902, longitude: 12.4922),
@@ -22,7 +22,7 @@ class LocationsDataService {
                 "rome-colosseum-3",
             ],
             link: "https://en.wikipedia.org/wiki/Colosseum"),
-        Location(
+        LocationModel(
             name: "Pantheon",
             cityName: "Rome",
             coordinates: CLLocationCoordinate2D(latitude: 41.8986, longitude: 12.4769),
@@ -33,7 +33,7 @@ class LocationsDataService {
                 "rome-pantheon-3",
             ],
             link: "https://en.wikipedia.org/wiki/Pantheon,_Rome"),
-        Location(
+        LocationModel(
             name: "Trevi Fountain",
             cityName: "Rome",
             coordinates: CLLocationCoordinate2D(latitude: 41.9009, longitude: 12.4833),
@@ -44,7 +44,7 @@ class LocationsDataService {
                 "rome-trevifountain-3",
             ],
             link: "https://en.wikipedia.org/wiki/Trevi_Fountain"),
-        Location(
+        LocationModel(
             name: "Eiffel Tower",
             cityName: "Paris",
             coordinates: CLLocationCoordinate2D(latitude: 48.8584, longitude: 2.2945),
@@ -54,7 +54,7 @@ class LocationsDataService {
                 "paris-eiffeltower-2",
             ],
             link: "https://en.wikipedia.org/wiki/Eiffel_Tower"),
-        Location(
+        LocationModel(
             name: "Louvre Museum",
             cityName: "Paris",
             coordinates: CLLocationCoordinate2D(latitude: 48.8606, longitude: 2.3376),
