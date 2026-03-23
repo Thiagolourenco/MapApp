@@ -57,5 +57,20 @@ class LocationViewModel {
             showList = false
         }
     }
+    
+    func nextItem(location: LocationModel) {
+        // Find the current index safely
+        guard let currentIndex = locations.firstIndex(of: location) else { return }
+
+        // Compute the next index (wrap around to 0 if at the end)
+        let nextIndex = locations.index(after: currentIndex)
+        let validNextIndex = nextIndex < locations.endIndex ? nextIndex : locations.startIndex
+
+        // Update the map location
+        withAnimation(.easeInOut) {
+            self.mapLocation = locations[validNextIndex]
+            self.showList = false
+        }
+    }
 }
 
