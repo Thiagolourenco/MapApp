@@ -75,7 +75,7 @@ extension LocationPreviewView {
     private var groupButton: some View {
         VStack(alignment: .leading, spacing: 8) {
             Button {
-                
+                viewModel.showDetails(location: location)
             } label: {
                 Text("Lear more")
                     .font(.subheadline)

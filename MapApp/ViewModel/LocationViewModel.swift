@@ -25,7 +25,7 @@ class LocationViewModel {
         }
     }
     var showList: Bool = false
-
+    var showDetailsLocation: LocationModel? = nil
     
     var mapPosition: MapCameraPosition = MapCameraPosition.region(MKCoordinateRegion())
     let mapSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
@@ -71,6 +71,10 @@ class LocationViewModel {
             self.mapLocation = locations[validNextIndex]
             self.showList = false
         }
+    }
+    
+    func showDetails(location: LocationModel) {
+        showDetailsLocation = location
     }
 }
 

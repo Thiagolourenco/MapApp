@@ -14,8 +14,19 @@ struct LocationView: View {
     var body: some View {
         @Bindable var model = viewModel
         ZStack(alignment: .top) {
-            Map(position: $model.mapPosition)
-            
+            Map(position: $model.mapPosition) {
+                ForEach(viewModel.locations) { location in
+                    Annotation("asd", coordinate: location.coordinates) {
+                        MarkerCustom()
+                            .scaleEffect(location == viewModel.mapLocation ? 1 : 0.7)
+                            .shadow(radius: 10)
+                            .onTapGesture {
+                                viewModel.nextLocation(location: location)
+                            }
+                    }
+                }
+            }
+
             VStack {
                 header
           
@@ -33,6 +44,9 @@ struct LocationView: View {
                      }
                  }
             }
+        }
+        .sheet(item: $model.showDetailsLocation) { (detailsLocation: LocationModel) in
+            DetailsLocationView(location: detailsLocation)
         }
     }
 }
